@@ -17,25 +17,35 @@ Local ESLint installation not found.
 
 npm i -D nodemon (install --save-dev)
 
+-Create README.md
+
 -Open git tab
 CNTRL+ENTER (to do both git add . AND git add commit -m "message")
 
--Create public remote repo (leave all options unchecked)
-git remote add origin https://github.com/JoshuaHolloway/api-4.git
-git push origin master
+-OR just:
+git add .
+git commit -m "message"
 
--Instructions were to do:
+-Then:
 git checkout -b main
+
+-Create public remote github repo (leave all options unchecked)
+git remote add origin https://github.com/JoshuaHolloway/api-4.git
+
+-Push:
 git push origin main
   --Do NOT do: git push -U origin main, etc.
   --Be explicit where it is we are pushing to.
   --We are pushing to the remote called 'origin'
-  --What are we pusing?  A.) The 'main' branch
+  --What are we pushing?  A.) The 'main' branch
 
-
+-Refresh public repo
+  --Default branch should be main and base project should be uploaded.
+  --Aparenetly, the master branch is overidden by main.
 
 ==============
--Create README.md
+
+npm install --save express cors helmet dotenv
 
 ==============
 -Add scripts
@@ -51,4 +61,16 @@ node
 console.log(process.env);
 console.log(process.env.PATH);
 -------------
--------------
+
+
+==============
+-Create .env file
+PORT=9000
+LADY=gaga
+SECRET="this 42"
+
+==============
+-Create config.js
+module.exports = {
+  PORT: process.env.PORT || 5e3,
+};
